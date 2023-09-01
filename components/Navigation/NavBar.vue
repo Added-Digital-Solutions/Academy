@@ -10,22 +10,19 @@
       <nav :class="menu_revealed ? 'translate-x-0' : '-translate-x-full'" class="md:h-fit z-100 md:static md:bg-transparent w-full md:w-fit fixed h-screen left-0 top-[65.5px] md:top duration-150 ease-in-out md:translate-x-0 bg-white">
         <ul class="grid grid-cols-1 place-items-center md:flex gap-5 md:gap-3 lg:gap-5 items-center px-6 pt-20 md:p-0">
           <li>
-            <UiButtonsTertiary>About Us</UiButtonsTertiary>
+            <UiButtonsTertiary>Home</UiButtonsTertiary>
           </li>
           <li>
-            <UiButtonsTertiary>Services</UiButtonsTertiary>
-          </li>
-          <li>
-            <UiButtonsTertiary>Portfolio</UiButtonsTertiary>
+            <UiButtonsTertiary>Courses</UiButtonsTertiary>
           </li>
           <li>
             <UiButtonsTertiary>Blog</UiButtonsTertiary>
           </li>
           <li>
-            <UiButtonsTertiary>Academy</UiButtonsTertiary>
+            <UiButtonsTertiary>Login</UiButtonsTertiary>
           </li>
           <li>
-            <UiButtonsPrimary @clicked="$router.push({path: '/signup'})">Contact Us</UiButtonsPrimary>
+            <UiButtonsPrimary @clicked="$router.push({path: '/signup'})">Sign Up</UiButtonsPrimary>
           </li>
         </ul>
       </nav>
