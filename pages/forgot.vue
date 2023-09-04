@@ -1,4 +1,5 @@
 <template>
+  <Head><Title>Forgot Password | A.D.S Academy</Title></Head>
   <form class="container mx-auto max-w-7xl px-6 py-20 min-h-screen grid place-items-center text-accent">
     <div class="md:border rounded-xl p-8 grid gap-8 w-full md:w-1/2 lg:w-1/3">
       <UiTypographyH3>Forgot your password?</UiTypographyH3>
