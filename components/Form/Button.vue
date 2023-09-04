@@ -7,7 +7,7 @@
     <div class="flex items-center justify-center uppercase">
       <div v-if="loading"  >
         <div class="justify-center flex">
-          <UiIconsLoading class="w-7"></UiIconsLoading>
+          <IconsLoading class="w-7"></IconsLoading>
         </div>
       </div>
       <div v-if="!loading">

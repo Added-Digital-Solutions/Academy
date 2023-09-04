@@ -22,7 +22,7 @@
             <UiButtonsTertiary @clicked="$router.push({name: 'login'})">Login</UiButtonsTertiary>
           </li>
           <li>
-            <UiButtonsPrimary @clicked="$router.push({path: '/signup'})">Sign Up</UiButtonsPrimary>
+            <UiButtonsPrimary @clicked="$router.push({name: 'signup'})">Sign Up</UiButtonsPrimary>
           </li>
         </ul>
       </nav>
