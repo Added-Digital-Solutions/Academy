@@ -13,7 +13,7 @@
             <UiButtonsTertiary>Home</UiButtonsTertiary>
           </li>
           <li>
-            <UiButtonsTertiary>Courses</UiButtonsTertiary>
+            <UiButtonsTertiary @clicked="$router.push({path: '/courses'})">Courses</UiButtonsTertiary>
           </li>
           <li>
             <UiButtonsTertiary>Blog</UiButtonsTertiary>
