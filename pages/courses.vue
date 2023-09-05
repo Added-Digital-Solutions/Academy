@@ -30,7 +30,7 @@
           <UiTypographyP class="mt-8"><span class="font-medium">Course duration:</span> 4 weeks</UiTypographyP>
           <UiTypographyP class="mt-4"><span class="font-medium">Course price:</span>#25,000</UiTypographyP>
 
-          <UiButtonsPrimary flexdisplay="true" class="mt-8">Enroll Now</UiButtonsPrimary>
+          <UiButtonsPrimary :flexdisplay="true" class="mt-8">Enroll Now</UiButtonsPrimary>
         </div>
       </div>
     </ModalsDrawer>
@@ -46,7 +46,8 @@
 export default {
   data() {
     return {
-      dialog_toggle: false
+      dialog_toggle: false,
+      imagePath: ''
     }
   },
 
