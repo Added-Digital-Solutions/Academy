@@ -1,6 +1,6 @@
 <template>
   <li class="border border-gray-400 rounded-xl p-8 text-accent">
-    <NuxtLink to="/courses" class="grid gap-4 md:gap-8">
+    <div class="grid gap-4 md:gap-8">
       <img :src="imagePath" alt="" class="w-14 h-14">
       <div>
         <UiTypographyH3>
@@ -13,9 +13,9 @@
           <UiTypographyP class="font-medium">#{{ price }}</UiTypographyP>
         </div>
 
-        <UiButtonsPrimary :flexdisplay="true">Enroll</UiButtonsPrimary>
+        <UiButtonsPrimary @clicked="$emit('clicked')" :flexdisplay="true">Enroll</UiButtonsPrimary>
       </div>
-    </NuxtLink>
+    </div>
   </li>
 </template>
 <script>

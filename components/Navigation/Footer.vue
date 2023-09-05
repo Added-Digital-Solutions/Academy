@@ -15,9 +15,6 @@
         <NuxtLink to="https://wa.me/message/QAXPPW4FO55FM1" target="_blank" class="w-10 h-10 rounded-md bg-white bg-opacity-10 grid place-items-center">
           <img src="@/assets/images/socials/whatsapp.svg" class="w-6 h-6" alt="">
         </NuxtLink>
-        <NuxtLink to="" target="_blank" class="w-10 h-10 rounded-md bg-white bg-opacity-10 grid place-items-center">
-          <img src="@/assets/images/socials/twitter.svg" class="w-6 h-6" alt="">
-        </NuxtLink>
         <NuxtLink to="https://www.facebook.com/addeddigitalsolutions" class="w-10 h-10 rounded-md bg-white bg-opacity-10 grid place-items-center">
           <img src="@/assets/images/socials/facebook.svg" class="w-6 h-6" alt="">
         </NuxtLink>

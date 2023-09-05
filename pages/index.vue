@@ -39,7 +39,7 @@
     <section class="px-6 py-20 container mx-auto max-w-7xl">
       <UiTypographyH3 class="text-center text-accent">Popular Courses</UiTypographyH3>
       <ul class="grid lg:grid-cols-3 gap-8 mt-8">
-        <CardsCourses v-for="item in 3" />
+        <CardsCourses @clicked="$router.push({name: 'courses'})" v-for="item in 3" />
       </ul>
     </section>
     <section class="px-6 py-20 container mx-auto max-w-7xl">
