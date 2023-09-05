@@ -12,7 +12,7 @@
             <p class="uppercase font-bold select-none"><slot name="title" /></p>
 
             <button @click="emitCloseDialogEvent()" class="block outline-none border-none group cursor-pointer hover:bg-secondary transition duration-300">
-              <img src="@/assets/images/Close.svg" class="h-8 w-8 p-2 bg-primary group-hover:bg-secondary transition duration-300 rounded-md" />
+              <img src="@/assets/images/cancel.svg" class="h-8 w-8 p-2 bg-primary group-hover:bg-secondary transition duration-300 rounded-md" />
             </button>
           </div>
           
