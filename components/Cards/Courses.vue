@@ -1,19 +1,17 @@
 <template>
-  <li class="border border-gray-400 rounded-xl p-8 text-accent">
-    <div class="grid gap-4 md:gap-8">
-      <img :src="imagePath" alt="" class="w-14 h-14">
+  <li class="shadow-md hover:shadow-xl duration-300 group ease-in-out rounded-xl text-accent cursor-pointer" @click="navigate()">
+    <div class="background h-56 w-full rounded-t-xl"></div>
+    <div class="grid gap-4 md:gap-8 p-8">
       <div>
-        <UiTypographyH3>
+        <h2 class="font-bold text-2xl group-hover:text-primary duration-300 ease-in-out">
         {{ title }}
-        </UiTypographyH3>
-        <UiTypographyP class="mt-2">{{ description }}</UiTypographyP>
+        </h2>
+        <UiTypographyP class="mt-2 text-clip">{{ description }}</UiTypographyP>
 
-        <div class="flex justify-between items-center mt-4 mb-8">
+        <div class="flex justify-between items-center mt-4">
           <UiTypographyP class="font-medium">{{ duration }} weeks</UiTypographyP>
           <UiTypographyP class="font-medium">#{{ price }}</UiTypographyP>
         </div>
-
-        <UiButtonsPrimary @clicked="$emit('clicked')" :flexdisplay="true">Enroll</UiButtonsPrimary>
       </div>
     </div>
   </li>
@@ -39,5 +37,16 @@ export default {
       type: Number
     }
   },
+
+  methods: {
+    navigate(){
+      this.$router.push({name: 'courses-course', params: {course: 'uiux'}})
+    }
+  },
 }
 </script>
+<style>
+.background {
+  background-image: url('@/assets/images/creativity.jpg');
+}
+</style>
