@@ -1,5 +1,5 @@
 <template>
-  <nav class="ease-in-out duration-300 w-full absolute bg-white">
+  <nav class="ease-in-out duration-300 w-full relative bg-white">
     <div class="flex container mx-auto items-center justify-between px-6 py-4 w-full">
       <div class="w-36">
         <NavigationLogo @logoClicked="reloadPage()"></NavigationLogo>
