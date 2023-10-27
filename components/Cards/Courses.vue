@@ -1,7 +1,7 @@
 <template>
   <li class="shadow-md hover:shadow-xl duration-300 group ease-in-out rounded-xl text-accent cursor-pointer" @click="navigate()">
     <div class="background h-56 w-full rounded-t-xl"></div>
-    <div class="grid gap-4 md:gap-8 p-8">
+    <div class="grid gap-4 md:gap-8 p-6">
       <div>
         <h2 class="font-bold text-2xl group-hover:text-primary duration-300 ease-in-out">
         {{ title }}
@@ -25,7 +25,7 @@ export default {
       type: String
     },
     description:  {
-      default: 'Course description Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero non temporibus quas ipsum labore nesciunt odit. Id at veniam ipsam itaque quos animi ratione sunt est? Qui aperiam nihil sed?',
+      default: 'Course description Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero non temporibus quas ipsum labore nesciunt odit.',
       type: String
     },
     duration: {
