@@ -1,25 +1,30 @@
 <template>
-  <footer class="bg-accent border-t border-white text-white">
-    <div class="max-w-7xl container mx-auto px-6 py-8 gap-8 flex justify-between items-center">
-      <div>
-        <div class="w-36" >
-          <NavigationLogo />
+  <footer class="text-accent">
+    <div class="max-w-7xl container mx-auto px-6 p-8 md:flex justify-between items-center">
+      <div class="" >
+        <div class="flex gap-4 items-center">
+        <NuxtLink to="https://instagram.com/addeddigitalsolutions?igshid=MzRlODBiNWFlZA==" class="border-[3px] border-accent rounded-md w-10 h-10 grid place-items-center">
+          <img src="@/assets/images/insta.svg" class="w-6 h-6" alt="">
+        </NuxtLink>
+        <NuxtLink class="border-[3px] border-accent rounded-md w-10 h-10 grid place-items-center">
+          <img src="@/assets/images/facebook.svg" class="w-6 h-6" alt="">
+        </NuxtLink>
+        <NuxtLink to="https://twitter.com/addeddigital?t=OZkFn-mOMALUjGTTFOgQeg&s=09" class="border-[3px] border-accent rounded-md w-10 h-10 grid place-items-center">
+          <img src="@/assets/images/twitter.svg" class="w-6 h-6" alt="">
+        </NuxtLink>
+        <NuxtLink class="border-[3px] border-accent rounded-md w-10 h-10 grid place-items-center">
+          <img src="@/assets/images/linkedin.svg" class="w-6 h-6" alt="">
+        </NuxtLink>
         </div>
-        <UiTypographyP class="mt-2">&copy; Added Digital Solutions, {{new Date().getFullYear()}}</UiTypographyP>
+        <UiTypographyP class="mt-4">{{new Date().getFullYear()}} Added Digital Solutions</UiTypographyP>
       </div>
 
-      <div class="flex items-center gap-4">
-        <NuxtLink to="https://www.instagram.com/addeddigitalsolutions/" target="_blank" class="w-10 h-10 rounded-md bg-white bg-opacity-10 grid place-items-center">
-        <img src="@/assets/images/socials/instagram.svg" class="w-6 h-6" alt="">
-        </NuxtLink>
-        <NuxtLink to="https://wa.me/message/QAXPPW4FO55FM1" target="_blank" class="w-10 h-10 rounded-md bg-white bg-opacity-10 grid place-items-center">
-          <img src="@/assets/images/socials/whatsapp.svg" class="w-6 h-6" alt="">
-        </NuxtLink>
-        <NuxtLink to="https://www.facebook.com/addeddigitalsolutions" class="w-10 h-10 rounded-md bg-white bg-opacity-10 grid place-items-center">
-          <img src="@/assets/images/socials/facebook.svg" class="w-6 h-6" alt="">
-        </NuxtLink>
+      <div class="grid gap-2 text-left md:text-right mt-8 md:mt-0">
+        <h2 class="text-primary text-xl font-bold">Added Digital Solutions</h2>
+        <UiTypographyP class="text-accent capitalize">1st floor, ID Global building, beside Allan pharmacy,<br/>opp Iwo city hall, Iwo, Osun state, nigeria</UiTypographyP>
+        <h2 class="text-primary text-xl font-bold">+2348066600820</h2>
+        <h2 class="text-primary text-xl font-bold">contact@addeddigital.com</h2>
       </div>
-
     </div>
   </footer>
 </template>
