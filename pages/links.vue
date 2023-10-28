@@ -6,10 +6,10 @@ definePageMeta({
 <template>
   <div class="grid place-items-center">
     <div class="max-w-3xl p-6 text-accent">
-      <div class="flex gap-12 items-center">
+      <div class="flex-col-reverse md:flex-row flex gap-12 items-center">
         <div class="grid gap-4 w-auto">
 
-          <h1 class="font-bold text-3xl">we are added<span class="text-primary">.</span></h1>
+          <h1 class="font-bold text-3xl">added academy<span class="text-primary">.</span></h1>
           <p class="text-sm">Added academy is a Bootcamp style training school that focuses on training young Nigerians on how to build softwares and designs. Our goal is to reduce the rate of unemployment in Africa by broadening the pool of Africa's tech talents. Select your preferred Course below to register.</p>
 
           <div class="flex gap-4 items-center">
@@ -29,7 +29,7 @@ definePageMeta({
 
         </div>
 
-        <div class="w-full">
+        <div class="w-36 mx-auto md:w-full">
           <NavigationLogo class="w-full"/>
         </div>
       </div>
