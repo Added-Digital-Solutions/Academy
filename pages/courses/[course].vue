@@ -92,8 +92,8 @@
   </section>
 
   <section class="py-20 px-6 max-w-7xl mx-auto text-accent text-center">
-    <UiTypographyH2>success stories<span class="text-primary">.</span></UiTypographyH2>
-
+    <UiTypographyH2>success stories<span class="text-primary mb-12">.</span></UiTypographyH2>
+    <CardsCourses />
   </section>
 </template>
 <style>
