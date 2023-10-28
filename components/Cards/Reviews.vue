@@ -2,11 +2,11 @@
   <div class="reviews">
     <div class="glide__track" data-glide-el="track">
     <ul class="glide__slides">
-      <li v-for="review in reviews" :key="review.id" class="glide__slide w-full shadow-md">
+      <li v-for="review in reviews" :key="review.id" class="glide__slide w-full h-96 shadow-md">
         <div class="w-full grid gap-2 p-6">
-          <UiTypographyP class="font-semibold">"{{ review.reviewer }}"</UiTypographyP>
-          <UiTypographyP><em class="text-light italic">"{{ review.position }}"</em></UiTypographyP>
-          <UiTypographyP>"{{ review.review }}"</UiTypographyP>
+          <p class="text-xl font-semibold">{{ review.reviewer }}</p>
+          <UiTypographyP><em class="text-gray-400 italic">"{{ review.position }}"</em></UiTypographyP>
+          <p class="text-xl">"{{ review.review }}"</p>
         </div>
       </li>
     </ul>
@@ -38,7 +38,7 @@ const reviews = [
   },
 ]
 
-onMounted(() =>{
+onMounted(() => {
   const sliders = document.querySelectorAll(`.reviews`)
   sliders.forEach((review) => {
     new Glide(review, {
