@@ -3,7 +3,7 @@
     <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides">
         <li v-for="review in reviews" :key="review.id" class="glide__slide">
-          <div class="w-full grid gap-4 p-6 shadow-xl text-left rounded-lg">
+          <div class="w-full grid gap-4 p-6 shadow-md text-left rounded-lg">
             <div>
               <UiTypographyP class="text-xl text-primary"><strong>{{ review.reviewer }}</strong></UiTypographyP>
               <UiTypographyP><em>{{ review.position }}</em></UiTypographyP>

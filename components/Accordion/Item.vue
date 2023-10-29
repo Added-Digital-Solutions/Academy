@@ -6,13 +6,13 @@
   >
     <div
       class="accordion__trigger"
-      :class="{ accordion__trigger_active: visible } + ' ' + trigger_class"
+      :class="item.active ? 'text-primary' : 'text-accent' + ' ' + trigger_class"
       @click="open"
       :style="trigger_styles"
     >
       <!-- This slot will handle the title/header of the accordion and is the part you click on -->
       <slot name="accordion-trigger"></slot>
-      <UiIconsAccordion :class="item.rotate ? 'rotate-0' : 'rotate-180'" class="w-4 h-4 transition-all"/>
+      <IconsAccordion :class="item.rotate ? 'rotate-[360deg]  text-primary' : 'rotate-180 text-accent'" class="w-4 h-4 transition-all"/>
     </div>
 
     <transition
@@ -161,6 +161,8 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition-duration: 300ms;
+  transition-property: ease-in-out;
 }
 
 .accordion__content ul {

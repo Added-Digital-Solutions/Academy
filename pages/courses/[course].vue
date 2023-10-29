@@ -95,7 +95,61 @@
     <UiTypographyH2>success stories<span class="text-primary mb-12">.</span></UiTypographyH2>
     <CardsReviews />
   </section>
+
+  <section class="py-20 px-6 max-w-7xl mx-auto text-accent text-center">
+    <UiTypographyH2>FAQs<span class="text-primary mb-12">.</span></UiTypographyH2>
+
+    <div class="mt-8 md:w-2/3 mx-auto xl:w-1/2 text-left">
+      <Accordion class="grid gap-2">
+      <AccordionItem v-for="faq in faqs" :key="faq.id" container_class="px-6 py-3 bg-light" content_class="py-3">
+        <template #accordion-trigger trigger_class="text-primary">
+          <UiTypographyP class="text-lg font-semibold">{{ faq.question }}</UiTypographyP>
+        </template>
+
+        <template #accordion-content >
+          <UiTypographyP>{{ faq.answer }}</UiTypographyP>
+        </template>
+      </AccordionItem>
+    </Accordion>
+    </div>
+
+    <UiTypographyP class="mt-8">Got any more questions? 
+      <span>
+        <NuxtLink class="ml-5 py-2 px-5 text-white focus:text-white hover:text-white bg-primary hover:bg-secondary focus:bg-secondary font-medium text-base 2xl:text-lg justify-center duration-300 ease-in-out rounded-md">Let's Talk</NuxtLink>
+      </span>
+    </UiTypographyP>
+  </section>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      faqs: [
+        {
+          id: 1,
+          question: 'Are the programs on-site or online?',
+          answer: 'Our program is 100% on-site, Live training program within our offices. However, if you are interested in our online program contact us.'
+        },
+        {
+          id: 2,
+          question: 'Where are you located?',
+          answer: 'We are at "1st floor, ID Global building, beside Allan Pharmacy,opp Iwo City Hall, Iwo, Osun State, Nigeria.'
+        },
+        {
+          id: 3,
+          question: 'Do you have evening/part-time classes?',
+          answer: 'Yes, we have evening classes. This class is structured best to suit individuals who have busy weekends.'
+        },
+        {
+          id: 4,
+          question: 'Do I need a laptop?',
+          answer: 'Yes, you will be requiring a laptop. All our classes are hands-on and very practical.'
+        },
+      ]
+    }
+  },
+}
+</script>
 <style>
 .side{
   background-image: url('@/assets/images/creativity.jpg');
