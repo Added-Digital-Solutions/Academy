@@ -3,5 +3,8 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: [
     '@nuxtjs/tailwindcss'
+  ],
+  css: [
+    '@/assets/css/glide.scss'
   ]
 })

@@ -10,7 +10,7 @@
 
         <div class="flex justify-between items-center mt-4">
           <UiTypographyP class="font-medium">{{ duration }} weeks</UiTypographyP>
-          <UiTypographyP class="font-medium">#{{ price }}</UiTypographyP>
+          <UiTypographyP class="font-medium">₦{{ price }}</UiTypographyP>
         </div>
       </div>
     </div>
@@ -40,7 +40,7 @@ export default {
 
   methods: {
     navigate(){
-      this.$router.push({name: 'courses-course', params: {course: 'uiux'}})
+      this.$router.push({name: 'courses-course', params: {course: 'ui design'}})
     }
   },
 }

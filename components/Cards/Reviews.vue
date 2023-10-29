@@ -1,15 +1,17 @@
 <template>
-  <div class="reviews">
+  <div class="sliders mt-8">
     <div class="glide__track" data-glide-el="track">
-    <ul class="glide__slides">
-      <li v-for="review in reviews" :key="review.id" class="glide__slide w-full h-96 shadow-md">
-        <div class="w-full grid gap-2 p-6">
-          <p class="text-xl font-semibold">{{ review.reviewer }}</p>
-          <UiTypographyP><em class="text-gray-400 italic">"{{ review.position }}"</em></UiTypographyP>
-          <p class="text-xl">"{{ review.review }}"</p>
-        </div>
-      </li>
-    </ul>
+      <ul class="glide__slides">
+        <li v-for="review in reviews" :key="review.id" class="glide__slide">
+          <div class="w-full grid gap-4 p-6 shadow-xl text-left rounded-lg">
+            <div>
+              <UiTypographyP class="text-xl text-primary"><strong>{{ review.reviewer }}</strong></UiTypographyP>
+              <UiTypographyP><em>{{ review.position }}</em></UiTypographyP>
+            </div>
+            <p class="text-xl">"{{ review.review }}"</p>
+          </div>
+        </li>
+      </ul>
   </div>
   </div>
 </template>
@@ -36,19 +38,30 @@ const reviews = [
     reviewer: 'Faith',
     position: 'Data Scientist at BudgIT'
   },
+  {
+    id: 4,
+    review: 'As an alumnus of Added Academy, learning PRODUCT DESIGN and PYTHON FOR DATA SCIENCE was one of the best decisions I have made in building a career.',
+    reviewer: 'Uchechukwu',
+    position: 'Data Analyst'
+  },
+  {
+    id: 5,
+    review: `I didn't only learn concepts that got me grounded as a Data Scientist. I also received mentorship which further positioned me for life and career growth.`,
+    reviewer: 'Damilola',
+    position: 'Data Analyst'
+  },
 ]
 
 onMounted(() => {
-  const sliders = document.querySelectorAll(`.reviews`)
-  sliders.forEach((review) => {
-    new Glide(review, {
+  const sliders = document.querySelectorAll(`.sliders`)
+  sliders.forEach((slider) => {
+    new Glide(slider, {
       type: 'carousel',
       focusAt: 'center',
-      autoplay: 5000,
+      autoplay: 1000,
       animationDuration: 1000,
-      perView: 1,
-      gap: 0,
-      peek: 0,
+      perView: 3,
+      gap: 30,
     }).mount()
   })
 })
