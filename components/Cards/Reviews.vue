@@ -60,7 +60,17 @@ onMounted(() => {
       focusAt: 'center',
       autoplay: 1000,
       animationDuration: 1000,
-      perView: 3,
+      breakpoints: {
+        600: {
+          perView: 1
+        },
+        1024: {
+          perView: 2
+        },
+        3468: {
+          perView: 3
+        }
+      },
       gap: 30,
     }).mount()
   })
