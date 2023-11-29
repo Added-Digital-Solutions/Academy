@@ -1,16 +1,18 @@
 <template>
   <li class="shadow-md hover:shadow-xl duration-300 group ease-in-out rounded-xl text-accent cursor-pointer" @click="navigate()">
-    <div class="background h-56 w-full rounded-t-xl"></div>
+    <div :style="{ background:`url(${imagePath})`}" class="background h-56 w-full rounded-t-xl">
+      <button class="py-2 px-5 text-white bg-primary group-hover:scale-105 focus:bg-secondary font-medium text-base 2xl:text-lg justify-center duration-300 ease-in-out rounded-md outline-none focus:outline-none ml-5 mt-5 border-2" >{{ type }}</button>
+    </div>
     <div class="grid gap-4 md:gap-8 p-6">
       <div>
         <h2 class="font-bold text-2xl group-hover:text-primary duration-300 ease-in-out">
         {{ title }}
         </h2>
-        <UiTypographyP class="mt-2 text-clip">{{ description }}</UiTypographyP>
+        <UiTypographyP class="mt-2 text-clip">{{ description.split(' ').slice(0, 20).join(' ')}}...</UiTypographyP>
 
-        <div class="flex justify-between items-center mt-4">
-          <UiTypographyP class="font-medium">{{ duration }} weeks</UiTypographyP>
-          <UiTypographyP class="font-medium">₦{{ price }}</UiTypographyP>
+        <div class="flex gap-10 items-center mt-6">
+          <UiTypographyP class="font-medium flex gap-2 items-center"><span><img src="@/assets/images/duration.svg" class="w-5" alt="Duration Icon" /></span>{{ duration }} weeks</UiTypographyP>
+          <UiTypographyP class="font-medium flex gap-2 items-center"><span><img src="@/assets/images/card.svg" class="w-5" alt="Duration Icon" /></span>₦{{ price }}</UiTypographyP>
         </div>
       </div>
     </div>
@@ -33,8 +35,12 @@ export default {
       type: Number
     },
     price: {
-      default: 10000.00,
-      type: Number
+      default: '10000.00',
+      type: String
+    },
+    type: {
+      default: 'On Location',
+      type: String
     }
   },
 
@@ -47,6 +53,8 @@ export default {
 </script>
 <style>
 .background {
-  background-image: url('@/assets/images/creativity.jpg');
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 </style>
