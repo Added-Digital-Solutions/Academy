@@ -1,5 +1,5 @@
 <template>
-  <div class="sliders mt-8">
+  <div class="review mt-8">
     <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides">
         <li v-for="review in reviews" :key="review.id" class="glide__slide">
@@ -53,7 +53,7 @@ const reviews = [
 ]
 
 onMounted(() => {
-  const sliders = document.querySelectorAll(`.sliders`)
+  const sliders = document.querySelectorAll(`.review`)
   sliders.forEach((slider) => {
     new Glide(slider, {
       type: 'carousel',

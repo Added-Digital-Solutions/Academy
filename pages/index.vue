@@ -32,34 +32,34 @@
     
     <section class="text-accent">
       <Container>
-        <UiTypographyH2>grow with us<span class="text-primary">.</span></UiTypographyH2>
-        <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mt-6 md:mt-12 place-items-center">
-          <li>
+        <UiTypographyH2 class="text-center">grow with us<span class="text-primary">.</span></UiTypographyH2>
+        <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mt-6 md:mt-12 place-items-stretch">
+          <li class="border rounded-xl border-accent p-6">
             <img src="@/assets/images/projects.svg" class="w-14" alt="">
             <h3 class="text-2xl font-semibold mt-6">In-Demand Tech Skills</h3>
             <UiTypographyP class="mt-1">Let's accelerate your journey into tech with our immersive training program. We will help you acquire the hottest skills in high demand in the job market.</UiTypographyP>
           </li>
-          <li>
+          <li class="border rounded-xl border-accent p-6">
             <img src="@/assets/images/standard.svg" class="w-14" alt="">
             <h3 class="text-2xl font-semibold mt-6">Industry Standard Approach</h3>
             <UiTypographyP class="mt-1">Our programs are well structured to take you from Zero to Hero. We'll you in-demand skills and best practices you need to thrive in today's workplace.</UiTypographyP>
           </li>
-          <li>
+          <li class="border rounded-xl border-accent p-6">
             <img src="@/assets/images/building.svg" class="w-14" alt="">
             <h3 class="text-2xl font-semibold mt-6">Conducive environment </h3>
             <UiTypographyP class="mt-1">With us, you learn with comfort. You learn in a conducive environment with all basic amenities at your disposal.</UiTypographyP>
           </li>
-          <li>
+          <li class="border rounded-xl border-accent p-6">
             <img src="@/assets/images/calendar.svg" class="w-14" alt="">
             <h3 class="text-2xl font-semibold mt-6">Flexible Calendars</h3>
             <UiTypographyP class="mt-1">We offer both weekday and weekend classes both in-person and online. We start at least 2 new cohorts every quarter. So, Whether you work full-time or not you can learn with us.</UiTypographyP>
           </li>
-          <li>
+          <li class="border rounded-xl border-accent p-6">
             <img src="@/assets/images/community.svg" class="w-14" alt="">
             <h3 class="text-2xl font-semibold mt-6">Supportive Community</h3>
             <UiTypographyP class="mt-1">Become part of a supportive community where you would meet students alike, collaborate with and grow together. Get first hand knowledge and learn best practices from our experienced coaches.</UiTypographyP>
           </li>
-          <li>
+          <li class="border rounded-xl border-accent p-6">
             <img src="@/assets/images/handshake.svg" class="w-14" alt="">
             <h3 class="text-2xl font-semibold mt-6">Hiring Partners</h3>
             <UiTypographyP class="mt-1">We offer the right tech talent to meet your team’s needs. Our talents are well equipped for the modern workplace and have the required skills to deliver industry-standard tech solutions.</UiTypographyP>
@@ -75,5 +75,64 @@
         <UiButtonsPrimary @clicked="$router.push('/courses')" class="mt-8">Browse all Courses</UiButtonsPrimary>
       </Container>
     </section>
+    
+    <section class="text-accent max-w-7xl mx-auto px-6 py-20">
+      <UiTypographyH2 class="text-center">success stories<span class="text-primary">.</span></UiTypographyH2>
+      <CardsReviews />
+    </section>
+
+    <section class="py-20 px-6 max-w-7xl mx-auto text-accent text-center">
+      <UiTypographyH2>FAQs<span class="text-primary mb-12">.</span></UiTypographyH2>
+
+      <div class="mt-8 md:w-2/3 mx-auto xl:w-1/2 text-left">
+        <Accordion class="grid gap-2">
+        <AccordionItem v-for="faq in faqs" :key="faq.id" container_class="px-6 py-3 bg-light" content_class="py-3">
+          <template #accordion-trigger trigger_class="text-primary">
+            <UiTypographyP class="text-lg font-semibold">{{ faq.question }}</UiTypographyP>
+          </template>
+
+          <template #accordion-content >
+            <UiTypographyP>{{ faq.answer }}</UiTypographyP>
+          </template>
+        </AccordionItem>
+      </Accordion>
+      </div>
+
+      <UiTypographyP class="mt-8">Got any more questions? 
+        <span>
+          <NuxtLink class="ml-5 py-2 px-5 text-white focus:text-white hover:text-white bg-primary hover:bg-secondary focus:bg-secondary font-medium text-base 2xl:text-lg justify-center duration-300 ease-in-out rounded-md">Let's Talk</NuxtLink>
+        </span>
+      </UiTypographyP>
+  </section>
   </main>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      faqs: [
+        {
+          id: 1,
+          question: 'Are the programs on-site or online?',
+          answer: 'Our program is 100% on-site, Live training program within our offices. However, if you are interested in our online program contact us.'
+        },
+        {
+          id: 2,
+          question: 'Where are you located?',
+          answer: 'We are at "1st floor, ID Global building, beside Allan Pharmacy,opp Iwo City Hall, Iwo, Osun State, Nigeria.'
+        },
+        {
+          id: 3,
+          question: 'Do you have evening/part-time classes?',
+          answer: 'Yes, we have evening classes. This class is structured best to suit individuals who have busy weekends.'
+        },
+        {
+          id: 4,
+          question: 'Do I need a laptop?',
+          answer: 'Yes, you will be requiring a laptop. All our classes are hands-on and very practical.'
+        },
+      ]
+    }
+  },
+}
+</script>
