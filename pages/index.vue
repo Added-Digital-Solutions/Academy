@@ -1,6 +1,6 @@
 <template>
   <main>
-    <header class="bg-accent bg-opacity-10 text-accent">
+    <header class="bg-light text-accent">
       <Container class="flex items-center justify-center text-accent gap-8">
         <div class="lg:w-1/2">
           <UiTypographyH1>learning that gets you ahead<span class="text-primary">.</span></UiTypographyH1>
@@ -22,9 +22,9 @@
         <UiTypographyP class="mt-2 lg:w-1/2">Our curriculum uses a project-based learning approach and is perfect for both beginners and experienced individuals.</UiTypographyP>
 
         <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 mt-6 md:mt-12 place-items-center">
-          <CardsCourses @clicked="" v-for="item in 3" />
+          <CardsCourses @clicked="selectCourse(course)" v-for="course in threeCourses" :key="course.id" :imagePath="course.image" :title="course.name" :duration="course.duration" :price="course.cost" :description="course.description" :type="course.type"/>
           <li class="lg:col-span-3 mx-auto">
-            <UiButtonsPrimary>Browse All Courses</UiButtonsPrimary>
+            <UiButtonsPrimary @clicked="$router.push('/courses')">Browse All Courses</UiButtonsPrimary>
           </li>
         </ul>
       </Container>
@@ -68,7 +68,7 @@
       </Container>
     </section>
 
-    <section class="bg-accent bg-opacity-10 text-accent text-center">
+    <section class="bg-light text-accent text-center">
       <Container class="grid place-items-center">
         <UiTypographyH2>ready to upskill<span class="text-primary">?</span></UiTypographyH2>
         <UiTypographyP class="mt-4 md:w-3/4 lg:w-2/3 mx-auto">If you love to grow or build a career in tech, we have you covered. At Added, we focus on industry-ready skills that prepare you for the future of work, while connecting you to incredible jobs both in Nigeria and abroad.</UiTypographyP>
@@ -107,6 +107,16 @@
   </main>
 </template>
 <script>
+import { mapWritableState } from 'pinia'
+import { useCoursesStore } from '~/store/courses'
+useSeoMeta({
+  title: 'Home | A.D.S.',
+  ogTitle: 'Academy Home Page',
+  description: 'Added Digital Solutions Academy.',
+  ogDescription: 'Added Digital Solutions Academy.',
+  ogImage: '@/assets/brand/logo.png',
+  twitterCard: '@/assets/brand/logo.png',
+})
 export default {
   data() {
     return {
@@ -131,8 +141,32 @@ export default {
           question: 'Do I need a laptop?',
           answer: 'Yes, you will be requiring a laptop. All our classes are hands-on and very practical.'
         },
-      ]
+      ],
+      threeCourses: []
     }
   },
+  
+  computed: {
+    ...mapWritableState(useCoursesStore, {
+      allCourses: 'courses',
+    }),
+    ...mapWritableState (useCoursesStore, {
+      selected: 'selected_course',
+    }),
+  },
+
+  methods: {
+    selectCourse(course){
+      this.selected = ''
+      this.selected = course
+      this.$router.push({name: 'courses-course', params: {
+        course: course.name
+      }})
+    }
+  },
+
+  mounted(){
+    this.threeCourses = this.allCourses.slice(0, 3)
+  }
 }
 </script>
