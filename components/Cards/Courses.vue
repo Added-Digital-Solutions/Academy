@@ -1,5 +1,5 @@
 <template>
-  <li class="shadow-md hover:shadow-xl duration-300 group ease-in-out rounded-xl text-accent cursor-pointer" @click="navigate()">
+  <li class="shadow-md hover:shadow-xl duration-300 group ease-in-out rounded-xl text-accent cursor-pointer" @click="$emit('clicked')">
     <div :style="{ background:`url(${imagePath})`}" class="background h-56 w-full rounded-t-xl">
       <button class="py-2 px-5 text-white bg-primary group-hover:scale-105 focus:bg-secondary font-medium text-base 2xl:text-lg justify-center duration-300 ease-in-out rounded-md outline-none focus:outline-none ml-5 mt-5 border-2" >{{ type }}</button>
     </div>
@@ -42,13 +42,7 @@ export default {
       default: 'On Location',
       type: String
     }
-  },
-
-  methods: {
-    navigate(){
-      this.$router.push({name: 'courses-course', params: {course: 'ui design'}})
-    }
-  },
+  }
 }
 </script>
 <style>
