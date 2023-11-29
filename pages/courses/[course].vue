@@ -1,53 +1,45 @@
 <template>
-  <main  class="bg-primary text-white min-h-screen">
+  <main  class="bg-light text-accent min-h-screen">
     <div class="max-w-7xl px-6 py-24 flex-col md:flex-row flex gap-8 md:gap-12 lg:gap-20 items-center justify-between mx-auto">
       <div class="w-full md:w-1/2 grid gap-6">
-        <UiTypographyH1 class="capitalize">{{$route.params.course}}</UiTypographyH1>
-        <UiTypographyP>Are you ready to embark on an exciting journey into the world of full-stack development? Our comprehensive Full-Stack Development Course is your gateway to mastering both frontend and backend technologies, empowering you to create dynamic and interactive web applications from scratch.</UiTypographyP>
+        <button class="py-2 px-5 text-white bg-primary group-hover:scale-105 focus:bg-secondary font-medium text-base 2xl:text-lg justify-center duration-300 ease-in-out rounded-md outline-none focus:outline-none border-2 w-fit" >{{ course.type }}</button>
+
+        <UiTypographyH1 class="capitalize">{{course.name}}</UiTypographyH1>
+        <UiTypographyP>{{ course.description }}</UiTypographyP>
 
         <div class="flex gap-8 items-center">
-          <NuxtLink class="bg-white text-primary font-medium text-md px-6 py-2 cursor-pointer rounded-md">Enroll Now</NuxtLink>
-          <NuxtLink class="bg-white text-primary font-medium text-lg px-6 py-2 cursor-pointer rounded-md">Download Syllabus</NuxtLink>
+          <UiButtonsPrimary>Enroll Now</UiButtonsPrimary>
+          <UiButtonsSecondary>Download Syllabus</UiButtonsSecondary>
         </div>
       </div>
 
       <div class="w-full md:w-1/2 flex items-center justify-end">
-        <div class="side w-full md:w-[85%] aspect-square rounded-xl"></div>
+        <div :style="{ background:`url(${course.image})`}" class="background w-full md:w-[85%] aspect-square rounded-xl"></div>
       </div>
     </div>
   </main>
 
-  <section class="py-20 px-6 max-w-7xl mx-auto flex gap-8 text-accent text-center">
-    <ul class="grid gap-8 grid-cols-2 mx-auto md:grid-cols-3 lg:grid-cols-6">
+  <section class="py-20 px-6 max-w-7xl mx-auto text-accent text-center">
+    <ul class="grid grid-cols-2 place-content-between gap-12 lg:grid-cols-4">
       <li class="flex flex-col gap-2">
         <img src="@/assets/images/duration.svg" class="w-10 h-10 mx-auto" alt="">
         <UiTypographyP>Duration</UiTypographyP>
-        <h2 class="text-2xl font-semibold">3 months</h2>
-      </li>
-      <li class="flex flex-col gap-2">
-        <img src="@/assets/images/calendar.svg" class="w-10 h-10 mx-auto" alt="">
-        <UiTypographyP>Start Date</UiTypographyP>
-        <h2 class="text-2xl font-semibold">December 1st, 2023</h2>
+        <h2 class="text-2xl font-semibold">{{ course.duration }} weeks</h2>
       </li>
       <li class="flex flex-col gap-2">
         <img src="@/assets/images/level.svg" class="w-10 h-10 mx-auto" alt="">
         <UiTypographyP>Level</UiTypographyP>
-        <h2 class="text-2xl font-semibold">Beginner</h2>
-      </li>
-      <li class="flex flex-col gap-2">
-        <img src="@/assets/images/list.svg" class="w-10 h-10 mx-auto" alt="">
-        <UiTypographyP>Prerequisites</UiTypographyP>
-        <h2 class="text-2xl font-semibold">A laptop</h2>
+        <h2 class="text-2xl font-semibold">{{course.level}}</h2>
       </li>
       <li class="flex flex-col gap-2">
         <img src="@/assets/images/projects.svg" class="w-10 h-10 mx-auto" alt="">
         <UiTypographyP>Projects</UiTypographyP>
-        <h2 class="text-2xl font-semibold">4 projects</h2>
+        <h2 class="text-2xl font-semibold">{{ course.projects }} projects</h2>
       </li>
       <li class="flex flex-col gap-2">
         <img src="@/assets/images/card.svg" class="w-10 h-10 mx-auto" alt="">
         <UiTypographyP>Cost</UiTypographyP>
-        <h2 class="text-2xl font-semibold">₦500,000</h2>
+        <h2 class="text-2xl font-semibold">₦{{ course.cost }}</h2>
       </li>
     </ul>
   </section>
@@ -121,6 +113,8 @@
   </section>
 </template>
 <script>
+import { mapWritableState  } from 'pinia'
+import { useCoursesStore } from '~/store/courses'
 export default {
   data() {
     return {
@@ -145,13 +139,19 @@ export default {
           question: 'Do I need a laptop?',
           answer: 'Yes, you will be requiring a laptop. All our classes are hands-on and very practical.'
         },
-      ]
+      ],
+      course: {}
     }
   },
+  mounted(){
+    this.course = JSON.parse(sessionStorage.getItem('course'))
+  }
 }
 </script>
 <style>
-.side{
-  background-image: url('@/assets/images/creativity.jpg');
+.background {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 </style>

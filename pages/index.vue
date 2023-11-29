@@ -159,6 +159,7 @@ export default {
     selectCourse(course){
       this.selected = ''
       this.selected = course
+      sessionStorage.setItem("course", JSON.stringify(course));
       this.$router.push({name: 'courses-course', params: {
         course: course.name
       }})
