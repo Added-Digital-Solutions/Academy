@@ -1,12 +1,14 @@
 import { defineStore } from 'pinia'
 import graphics from '@/assets/images/courses/graphic.webp'
-import product from '@/assets/images/courses/product.jpg'
 import ui from '@/assets/images/courses/ui.png'
-import web from '@/assets/images/courses/web.png'
 import dev from '@/assets/images/courses/dev.jpg'
+import backend from '@/assets/images/courses/backend.jpg'
 import fullstack from '@/assets/images/courses/fullstack.png'
 import copy from '@/assets/images/courses/copywriting.jpg'
-import bloggin from '@/assets/images/courses/bloggin.jpg'
+import bloggin from '@/assets/images/courses/blogging.jpeg'
+import biz from '@/assets/images/courses/business.jpg'
+import wordpress from '@/assets/images/courses/wordpress.jpg'
+import paypal from '@/assets/images/courses/paypal.jpg'
 export const useCoursesStore = defineStore('courses', {
   state: () => {
     return {
@@ -34,7 +36,7 @@ export const useCoursesStore = defineStore('courses', {
           prerequistes: 'A laptop',
           projects: 2,
           cost: '100,000',
-          image: product,
+          image: ui,
           type: 'On Location'
         },
         {
@@ -53,14 +55,14 @@ export const useCoursesStore = defineStore('courses', {
         {
           id: 4,
           name: 'Backend Development',
-          description: `Start off your career today as a Back-End Developer. Learn to build high quality websites with dynamic applications to create mindblowing applications.`,
+          description: `Our backend development course is your perfect entry point to the world of backend engineering. Learn the fundamentals of building robust and secure web applications, from server-side scripting to database management. You'll be crafting dynamic websites in no time, impressing clients and employers alike.`,
           duration: 12,
           timeline: 4,
           level: 'Beginner',
           prerequistes: 'A laptop',
           projects: 2,
           cost: '200,000',
-          image: dev,
+          image: backend,
           type: 'Online'
         },
         {
@@ -79,7 +81,7 @@ export const useCoursesStore = defineStore('courses', {
         {
           id: 7,
           name: 'Ghostwriting',
-          description: `In today's competitive digital landscape, effective writing is the cornerstone of successful marketing campaigns. Whether you're crafting website copy, email marketing materials, or social media content, understanding the art of persuasive writing is crucial for capturing attention, driving conversions, and achieving your marketing goals.`,
+          description: `Turn your ideas into captivating written content, whether it's a novel, blog post, or even a business proposal. We'll equip you with the skills to ghostwrite like a pro, helping you share your stories and expertise with the world.`,
           duration: 1,
           timeline: 3,
           level: 'Beginner',
@@ -99,46 +101,46 @@ export const useCoursesStore = defineStore('courses', {
           prerequistes: 'A laptop',
           projects: 1,
           cost: '100,000',
-          image: web,
+          image: bloggin,
           type: 'On Location'
         },
         {
           id: 9,
           name: 'Business name',
-          description: `Learn how to create names for businesses across the world. With full domain, social media and trademark availability`,
+          description: `Unlock the secrets of crafting a magnetic business name that grabs attention, resonates with your target audience, and sets your clients apart from the competition. Learn powerful naming strategies used by successful brands, and avoid common pitfalls that can sink promising ventures.`,
           duration: 1,
           timeline: 3,
           level: 'Beginner',
           prerequistes: 'A laptop',
           projects: 1,
           cost: '20,000',
-          image: web,
+          image: biz,
           type: 'Online/On Location'
         },
         {
           id: 9,
           name: 'Wordpress website design',
-          description: `Lorem ipsum. I will add description to this course later.`,
+          description: `Our WordPress web design course empowers you to create professional websites using the world's most popular content management system. Master the art of theme customization, plugin integration, and SEO optimization to design websites that not only look amazing but also attract visitors and convert them into leads.`,
           duration: 4,
           timeline: 3,
           level: 'Beginner',
           prerequistes: 'A laptop',
           projects: 1,
           cost: '50,000',
-          image: web,
+          image: wordpress,
           type: 'On Location'
         },
         {
           id: 10,
           name: 'Creating verified paypal accounts',
-          description: `Lorem ipsum. I will add description to this course later.`,
+          description: `Master the ins and outs of creating approved PayPal accounts. Gain the confidence to Effortlessly navigate the process of setting up a PayPal account for your business, ensuring security, efficiency, and compliance.`,
           duration: 1,
           timeline: 3,
           level: 'Beginner',
           prerequistes: 'A laptop',
           projects: 1,
           cost: '50,000',
-          image: web,
+          image: paypal,
           type: 'Online/On Location'
         },
       ],
